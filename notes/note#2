@@ -26,6 +26,6 @@ Q. 오류가 나는 이유가 뭘까?
 A: getchar 함수로 값을 받아 변수에 입력하기 위해서는, 변수의 값이 비워져있어야한다. 그러므로 getchar(grade) 는 잘못되었다.
   grade = gerchar() 로 비어줘야겠다. 
   putchar 함수로 값을 출력하기 위해서는 출력할 변수가 있어야 하나, 비어져있다. 그러므로 putchar()에 변수를 추가하여
-  purchar(grade)로 바꿔야겠다.
+  putchar(grade)로 바꿔야겠다.
 -> grade = getchar(); , putchar(grade);로 바꿔주니 정상적으로 작동되었다. 
 
