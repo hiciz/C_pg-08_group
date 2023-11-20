@@ -9,7 +9,7 @@
 
 <div markdown="1">
 
-```cpg
+```c
 #include <stdio.h>
 
 int Max(int* pArr, int size);
