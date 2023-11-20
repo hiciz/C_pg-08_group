@@ -82,4 +82,4 @@ void Sorting(int* pArr, int size) {
 
 
 ### 실행 결과 이미지 
-<img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/1468099e-2ddd-40a1-822f-9335778a85ef">
+<img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/issues/1#issue-2002094165">
