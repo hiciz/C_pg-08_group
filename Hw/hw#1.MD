@@ -9,7 +9,7 @@
 
 <div markdown="1">
 
-```c
+```cpg
 #include <stdio.h>
 
 int Max(int* pArr, int size);
@@ -45,7 +45,6 @@ int main() {
 
     return 0;
 }
-
 int Max(int* pArr, int size) {
     int max = pArr[0];
     for (int i = 1; i < size; i++) {
@@ -77,6 +76,7 @@ void Sorting(int* pArr, int size) {
         }
     }
 }
+
 ```
 </div>
 </details>
