@@ -80,3 +80,9 @@ void Sorting(int* pArr, int size) {
 ```
 </div>
 </details>
+
+
+
+### 실행 결과 이미지 
+
+<img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/343378da-84e5-4c50-bdf1-e708de3c6dfd.png">
