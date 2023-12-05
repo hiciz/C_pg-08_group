@@ -209,8 +209,25 @@ void inBook(Book list[], int num) { //반납함수
 
 <div markdown="1">
 
+1. 1번[도서목록] 선택 시:         
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/1703a9b1-273e-4ba9-8fe2-fc17785a7908.png" width="40%" height="30%" alt="1번"></img>
+   
+2. 2번 [검색] 선택 시:   
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/141dc6cb-e44f-4e2e-863a-5e44c51e1ee7.png" width="40%" height="30%" alt="2번"></img>
+📌대소문자 상관없이 검색이 되는 모습
+   
+3. 3번 [대출] 선택 시:   
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/5ae96f0f-33ae-4dc7-9797-eedf8258b7c3.png" width="40%" height="30%" alt="3번"></img>
+📌대출 선택을 하면, 대출중으로 바뀐다.  
+   
+4. 4번 [반납] 선택 시:   
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/9e523793-f988-4510-bba4-b2a2dcdc7b86.png" width="40%" height="30%" alt="4번"></img>   
+📌없는 제목을 작성하면 없다고 뜨며 초기 화면으로 돌아간다.   
 
-<img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/343378da-84e5-4c50-bdf1-e708de3c6dfd.png">
+5. 5번 [종료] 선택 시:   
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/8e2c2dc2-31e9-45ca-8cf1-cf31ca301af4.png" width="40%" height="30%" alt="5번"></img>   
+📌프로그램이 종료되는 모습.   
+
 
 
 </div>
