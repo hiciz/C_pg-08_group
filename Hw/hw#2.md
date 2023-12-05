@@ -151,7 +151,7 @@ void searchBook(Book list[], int num) {
     }
 }
 
-void outBook(Book list[], int num) {
+void outBook(Book list[], int num) { //대출함수수
     char borrowTitle[MAX_TITLE_LENGTH];
     printf("대출할 책의 이름을 선택하세요: ");
     scanf_s("%s", borrowTitle, (unsigned)_countof(borrowTitle));
@@ -175,7 +175,7 @@ void outBook(Book list[], int num) {
     }
 }
 
-void inBook(Book list[], int num) {
+void inBook(Book list[], int num) { //반납함수
     char returnTitle[MAX_TITLE_LENGTH];
     printf("반납할 책의 이름을 선택하세요: ");
     scanf_s("%s", returnTitle, (unsigned)_countof(returnTitle)); //부호없는 정수
