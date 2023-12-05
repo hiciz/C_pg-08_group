@@ -40,71 +40,165 @@
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int Max(int* pArr, int size);
-int Min(int* pArr, int size);
-void Sorting(int* pArr, int size);
+//strcmp 오류시 대처 
+#ifdef _WIN32
+#define STRCASECMP _stricmp
+#else
+#define STRCASECMP strcasecmp
+#endif
+
+#define MAX_TITLE_LENGTH 100
+#define MAX_AUTHORS_LENGTH 100
+#define MAX_PRESS_LENGTH 100
+
+typedef struct {
+    char Title[MAX_TITLE_LENGTH];
+    char Authors[MAX_AUTHORS_LENGTH];
+    char Press[MAX_PRESS_LENGTH];
+    int Page;
+    int Price;
+    int borrowed; // 1 -> 대출가능 , 0 -> 대출불가
+} Book;
+
+void printBook(Book list[], int num); //책목록
+void searchBook(Book list[], int num); //책검색
+void outBook(Book list[], int num); //책대출
+void inBook(Book list[], int num); //책반납
 
 int main() {
-    int b[] = { 20, 34, 12, 24, 54, 91, 9, 40, 81, 10 };
-    int size = sizeof(b) / sizeof(b[0]);
+    int user_choice;
+    int total_num_book = 5;
 
-    // 정렬 전 배열
-    printf("[정렬 전 배열]\n");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", b[i]);
+    Book list[5] = {
+        {"Truth", "John", "Century", 300, 20000, 1},
+        {"Love", "Paul", "Goods", 200, 15000, 1},
+        {"Joy", "James", "Cookie", 250, 18000, 1},
+        {"Thanks", "Mark", "Saesong", 240, 21000, 1},
+        {"God", "Johnson", "Jungjo", 450, 35000, 1},
+    };
+
+    while (1) {
+        printf("\n [도서목록] [검색] [대출] [반납] [종료]\n");
+        printf("1번: [도서목록]\n");
+        printf("2번: [검색]\n");
+        printf("3번: [대출]\n");
+        printf("4번: [반납]\n");
+        printf("5번: [종료]\n");
+
+        printf("\n 번호를 입력하세요: \n");
+        scanf_s("%d", &user_choice);
+
+        switch (user_choice) {
+            case 1:
+                printBook(list, total_num_book);
+                break;
+
+            case 2:
+                searchBook(list, total_num_book);
+                break;
+
+            case 3:
+                outBook(list, total_num_book);
+                break;
+
+            case 4:
+                inBook(list, total_num_book);
+                break;
+
+            case 5:
+                printf("프로그램을 종료합니다.\n");
+                exit(0);
+
+            default:
+                printf("잘못입력했습니다.\n");
+        }
     }
-    printf("\n");
-
-    // 최대값 최소값
-    int max_value = Max(b, size);
-    int min_value = Min(b, size);
-    printf("최대값: %d\n", max_value);
-    printf("최소값: %d\n", min_value);
-
-   
-    Sorting(b, size);
-
-    
-    printf("[내림차순 정렬 후 배열]\n");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", b[i]);
-    }
-    printf("\n");
 
     return 0;
 }
-int Max(int* pArr, int size) {
-    int max = pArr[0];
-    for (int i = 1; i < size; i++) {
-        if (pArr[i] > max) {
-            max = pArr[i];
-        }
+
+void printBook(Book list[], int num) {
+    printf("Title\tAuthors\tPress\tPage\tPrice\tBorrow\n");
+    printf("-----\t------\t-----\t-----\t-----\t------\n");
+    for (int i = 0; i < num; i++) {
+        printf("%s\t%s\t%s\t%d\t%d\t%s\n", list[i].Title, list[i].Authors, list[i].Press, list[i].Page, list[i].Price,
+            (list[i].borrowed == 1) ? "대출가능(available)" : "대출중(borrowing)"); //1씩 증가하면서 리스트 출력
     }
-    return max;
 }
 
-int Min(int* pArr, int size) {
-    int min = pArr[0];
-    for (int i = 1; i < size; i++) {
-        if (pArr[i] < min) {
-            min = pArr[i];
+void searchBook(Book list[], int num) {
+    char searchTitle[MAX_TITLE_LENGTH];
+    printf("검색할 도서를 선택하세요: ");
+    scanf_s("%s", searchTitle, (unsigned)_countof(searchTitle));
+
+    int found = 0;
+    for (int i = 0; i < num; i++) {
+        if (STRCASECMP(list[i].Title, searchTitle) == 0) { //대소문자구별없이검색
+            printf("Title\tAuthors\tPress\tPage\tPrice\tBorrow\n");
+            printf("-----\t------\t-----\t-----\t-----\t------\n");
+            printf("%s\t%s\t%s\t%d\t%d\t%s\n", list[i].Title, list[i].Authors, list[i].Press, list[i].Page, list[i].Price,
+                (list[i].borrowed == 1) ? "대출가능(available)" : "대출중(borrowing)");
+            found = 1;
+            break;
         }
     }
-    return min;
+
+    if (!found) {
+        printf("보유하고 있지 않은 책 제목입니다.\n");
+    }
 }
 
-void Sorting(int* pArr, int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
-            if (pArr[j] < pArr[j + 1]) {
-                int temp = pArr[j];
-                pArr[j] = pArr[j + 1];
-                pArr[j + 1] = temp;
+void outBook(Book list[], int num) {
+    char borrowTitle[MAX_TITLE_LENGTH];
+    printf("대출할 책의 이름을 선택하세요: ");
+    scanf_s("%s", borrowTitle, (unsigned)_countof(borrowTitle));
+
+    int found = 0;
+    for (int i = 0; i < num; i++) {
+        if (STRCASECMP(list[i].Title, borrowTitle) == 0) { //입력받은 책 제목이 일치한 경우 
+            if (list[i].borrowed == 1) {
+                list[i].borrowed = 0;
+                printf("대출 되었습니다.\n"); //대출될경우 0으로 변경 
+            } else {
+                printf("대출 중이라 대출 할 수 없습니다.\n"); //대출되어 0인 경우
             }
+            found = 1;
+            break;
         }
     }
+
+    if (!found) {
+        printf("보유하고 있지 않은 책 제목입니다.\n");
+    }
 }
+
+void inBook(Book list[], int num) {
+    char returnTitle[MAX_TITLE_LENGTH];
+    printf("반납할 책의 이름을 선택하세요: ");
+    scanf_s("%s", returnTitle, (unsigned)_countof(returnTitle)); //부호없는 정수
+
+    int found = 0;
+    for (int i = 0; i < num; i++) {
+        if (STRCASECMP(list[i].Title, returnTitle) == 0) {
+            if (list[i].borrowed == 0) {
+                list[i].borrowed = 1;
+                printf("책이 반납 되었습니다.\n");
+            } else {
+                printf("대출 되지 않은 책입니다.\n");
+            }
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("보유하고 있지 않은 책 제목입니다.\n");
+    }
+}
+
 
 ```
 </div>
