@@ -120,7 +120,7 @@ int main() {
     return 0;
 }
 
-void printBook(Book list[], int num) {
+void printBook(Book list[], int num) { //목록함수구현
     printf("Title\tAuthors\tPress\tPage\tPrice\tBorrow\n");
     printf("-----\t------\t-----\t-----\t-----\t------\n");
     for (int i = 0; i < num; i++) {
@@ -129,7 +129,7 @@ void printBook(Book list[], int num) {
     }
 }
 
-void searchBook(Book list[], int num) {
+void searchBook(Book list[], int num) { //검색함수구현
     char searchTitle[MAX_TITLE_LENGTH];
     printf("검색할 도서를 선택하세요: ");
     scanf_s("%s", searchTitle, (unsigned)_countof(searchTitle));
@@ -151,7 +151,7 @@ void searchBook(Book list[], int num) {
     }
 }
 
-void outBook(Book list[], int num) { //대출함수수
+void outBook(Book list[], int num) { //대출함수
     char borrowTitle[MAX_TITLE_LENGTH];
     printf("대출할 책의 이름을 선택하세요: ");
     scanf_s("%s", borrowTitle, (unsigned)_countof(borrowTitle));
