@@ -210,14 +210,14 @@ void inBook(Book list[], int num) { //반납함수
 <div markdown="1">
 
 1. 1번[도서목록] 선택 시:         
-<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/1703a9b1-273e-4ba9-8fe2-fc17785a7908.png" width="40%" height="30%" alt="1번"></img>
-   
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/1703a9b1-273e-4ba9-8fe2-fc17785a7908.png" width="40%" height="30%" alt="1번"></img>   
+    
 2. 2번 [검색] 선택 시:   
-<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/141dc6cb-e44f-4e2e-863a-5e44c51e1ee7.png" width="40%" height="30%" alt="2번"></img>
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/141dc6cb-e44f-4e2e-863a-5e44c51e1ee7.png" width="40%" height="30%" alt="2번"></img>   
 📌대소문자 상관없이 검색이 되는 모습
    
 3. 3번 [대출] 선택 시:   
-<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/5ae96f0f-33ae-4dc7-9797-eedf8258b7c3.png" width="40%" height="30%" alt="3번"></img>
+<img src="https://github.com/hiciz/C_pg-08_group/assets/138213248/5ae96f0f-33ae-4dc7-9797-eedf8258b7c3.png" width="40%" height="30%" alt="3번"></img>   
 📌대출 선택을 하면, 대출중으로 바뀐다.  
    
 4. 4번 [반납] 선택 시:   
