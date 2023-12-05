@@ -6,6 +6,7 @@
 <details>
   <summary>문제 상세 내용</summary>
   <img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/33455d9e-1be5-42e9-ad68-06d8346189fc.png">
+  
   1. [도서목록]을 선택하면, 책 전체 목록을 보여준다. (3점)
         
         예) Title   Authors   Press   Page   Price
