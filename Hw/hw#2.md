@@ -5,7 +5,20 @@
 #### :question: 문제: 멤버 변수로 제목, 지은이, 출판사라는 문자형 변수 3개, 쪽수와 가격이라는 정수형 변수 2개를 가진 구조체 Books를 정의하고, 다음의 책 정보를 담을 수 있는 구조체 배열을 만든다.
 <details>
   <summary>문제 상세 내용</summary>
-  <img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/343378da-84e5-4c50-bdf1-e708de3c6dfd.png">
+  <img width="863" alt="image" src="https://github.com/hiciz/C_pg-08_group/assets/138213248/33455d9e-1be5-42e9-ad68-06d8346189fc.png">
+  1. [도서목록]을 선택하면, 책 전체 목록을 보여준다. (3점)
+        
+        예) Title   Authors   Press   Page   Price
+        
+           ----     ---------    ------   -------   -------
+        
+            Truth  John      Century 300    20,000
+        
+             Love  Paul       Goods   200   15,000
+  2. [검색] 선택하면, “검색할 도서를 선택하세요”입력 창이 뜬다. 책 제목(Title)을 입력하면 책 정보를 제공해준다.
+  3. [대출]을 선택하면, 대출할 책의 이름을 선택하는 문구가 나온다.
+  4. [반납] 선택하면, 반납할 책의 이름을 선택하는 문구가 나온다. (4점)
+  5. [종료] 버튼을 누르면, 프로그램이 종료된다.
 </details>
 
 
