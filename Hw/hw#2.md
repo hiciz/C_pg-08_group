@@ -132,9 +132,9 @@ void printBook(Book list[], int num) { //목록함수구현
 void searchBook(Book list[], int num) { //검색함수구현
     char searchTitle[MAX_TITLE_LENGTH];
     printf("검색할 도서를 선택하세요: ");
-    scanf_s("%s", searchTitle, (unsigned)_countof(searchTitle));
+    scanf_s("%s", searchTitle, (unsigned)_countof(searchTitle)); //unsigned->scanf_s의 형식 
 
-    int found = 0;
+    int found = 0; //검색된 책을 찾았는지 확인해주는 변수 
     for (int i = 0; i < num; i++) {
         if (STRCASECMP(list[i].Title, searchTitle) == 0) { //대소문자구별없이검색
             printf("Title\tAuthors\tPress\tPage\tPrice\tBorrow\n");
